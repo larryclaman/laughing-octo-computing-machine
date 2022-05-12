@@ -29,9 +29,10 @@ jobs:
       - name: Run a multi-line script
         run: |
           echo "GITHUB_STEP_SUMMARY is $GITHUB_STEP_SUMMARY"
+          echo "The prior output is ${{steps.setter.outputs.out1 }}"
           #cat $GITHUB_STEP_SUMMARY
           #echo "std out is ${{steps.tfplan.outputs.stdout }}"
-          echo "## Terraform Plan Output"  > $GITHUB_STEP_SUMMARY
+          echo "## Terraform Plan Output"  >> $GITHUB_STEP_SUMMARY
           echo "```"   >> $GITHUB_STEP_SUMMARY
           echo "${{steps.setter.outputs.out1 }}"  >> $GITHUB_STEP_SUMMARY
           echo "```"   >> $GITHUB_STEP_SUMMARY
