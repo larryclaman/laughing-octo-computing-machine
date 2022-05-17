@@ -30,4 +30,4 @@ jobs:
         uses: benc-uk/workflow-dispatch@v1
         with:
           workflow: B
-          #token: ${{ secrets.PERSONAL_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
